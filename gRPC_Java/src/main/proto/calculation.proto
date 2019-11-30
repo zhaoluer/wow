@@ -1,0 +1,28 @@
+syntax="proto3";
+//生成多个文件
+option java_multiple_files = true;
+//定义生成的Java 包
+option java_package = "example.calc";
+//定义生成的类名
+option java_outer_classname = "Calc";
+
+
+
+package calc;
+
+//define service
+service Calculation{
+    rpc add(Param) returns (Result){}
+    rpc muti(Param) returns(Result){}
+
+}
+message Param{
+    int32 param1=1;
+    int32 param2=2;
+}
+message Result{
+    int32 result=1;
+}
+
+
+
